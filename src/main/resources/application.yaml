@@ -1,0 +1,59 @@
+spring:
+  profiles:
+    active: local
+    group:
+      local:
+        - local
+        - member-local
+        - aws-local
+        - db-local
+      dev:
+        - dev
+        - member-dev
+        - aws-dev
+        - db-dev
+      prod:
+        - prod
+        - member-prod
+        - aws-prod
+        - db-prod
+    include:
+      - member
+      - aws
+      - db
+  #  devtools:
+  #    livereload:
+  #      enabled: true
+
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        one-indexed-parameters: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+server:
+  port: 9091
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+server:
+  port: 9091
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+server:
+  port: 9091
