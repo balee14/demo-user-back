@@ -5,22 +5,22 @@ spring:
       local:
         - local
         - member-local
-        - aws-local
         - db-local
+#        - aws-local
       dev:
         - dev
         - member-dev
-        - aws-dev
         - db-dev
+#        - aws-dev
       prod:
         - prod
         - member-prod
-        - aws-prod
         - db-prod
+#        - aws-prod
     include:
       - member
-      - aws
       - db
+#      - aws
   #  devtools:
   #    livereload:
   #      enabled: true
@@ -38,7 +38,7 @@ spring:
       on-profile: local
 
 server:
-  port: 9091
+  port: 8091
 
 ---
 spring:
@@ -47,7 +47,7 @@ spring:
       on-profile: dev
 
 server:
-  port: 9091
+  port: 8091
 
 ---
 spring:
@@ -56,4 +56,4 @@ spring:
       on-profile: prod
 
 server:
-  port: 9091
+  port: 8091
